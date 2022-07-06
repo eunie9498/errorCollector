@@ -10,6 +10,7 @@
  Caused by: org.gradle.api.GradleException: No matching client found for package name
 ```
 <br>
+
 #### 🔑 해결 방안
 app/google.services.json 파일 속 `package_name` 변경
 ```(kotlin)
