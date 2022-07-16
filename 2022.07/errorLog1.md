@@ -24,6 +24,7 @@ app/google.services.json 파일 속 `package_name` 변경
       }
       ...
 ```
+<br><br>
 
 ### Manifest 미등록 오류
 > 발생일자 : 2022.07.09
@@ -46,3 +47,21 @@ AndroidManifest.xml에 등록해줍니다
 ```
 여기서 `exported`는 다른앱에서 해당 Activity를 실행가능한지에 대한 boolean 값입니다 <br>
 targetSdkVersion이 31이상이라면 필수로 포함해야합니다.
+
+<br><Br>
+
+### MpAndroidChart 연동 오류
+```kotlin
+Execution failed for task ':app:dataBindingMergeDependencyArtifactsDebug'.
+> Could not resolve all files for configuration ':app:debugCompileClasspath'.
+   > Could not find com.github.PhilJay:MPAndroidChart:v3.1.0.
+     Required by:
+         project :app
+```
+<br>
+
+#### 🔑 해결 방안
+settings.gradle에 아래항목 추가해야해요
+```kotlin
+maven {url 'https://jitpack.io'}
+```
