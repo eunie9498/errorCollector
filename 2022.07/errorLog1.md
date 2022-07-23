@@ -65,3 +65,21 @@ settings.gradle에 아래항목 추가해야해요
 ```kotlin
 maven {url 'https://jitpack.io'}
 ```
+<br><br>
+
+### API 통신 모델 Null문제
+```kotlin
+java.lang.IllegalArgumentException : Parameter specified as non-null is null
+```
+
+API 모델 중 null값이 내려오는 경우가 있는데, 무조건 값이 있는것으로 가정해서 나는 오류였습니다
+<br>
+
+#### 🔑 해결 방안
+DTO에 nullable을 허용해줍니다
+```kotlin
+@Parcelize
+data class Test(
+  var title : String?=""
+): Parcelable
+```
