@@ -83,3 +83,16 @@ data class Test(
   var title : String?=""
 ): Parcelable
 ```
+
+<br><br>
+
+### ViewModel 선언 시 context 연결 문제
+```kotlin
+ Caused by: java.lang.NoSuchMethodException: --.viewmodel.MainViewModel.<init>
+```
+
+<br>
+#### 🔑 해결 방안
+🚫ViewModel에서 Context를 참조하면 안된다!🚫
+수명 주기가 다르기 때문에,,! CustomDialog를 사용하려다가 너무나도 당연히
+context를 참조하려고 했다.. 하면 안돼여!
