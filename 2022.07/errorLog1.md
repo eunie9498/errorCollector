@@ -1,4 +1,4 @@
-### 패키지 변경 오류
+### 🐛 패키지 변경 오류
 > 발생일자 : 2022.07.06
 
 <br>
@@ -26,7 +26,7 @@ app/google.services.json 파일 속 `package_name` 변경
 ```
 <br><br>
 
-### Manifest 미등록 오류
+### 🐛 Manifest 미등록 오류
 > 발생일자 : 2022.07.09
 
 <br>
@@ -50,7 +50,7 @@ targetSdkVersion이 31이상이라면 필수로 포함해야합니다.
 
 <br><Br>
 
-### MpAndroidChart 연동 오류
+### 🐛 MpAndroidChart 연동 오류
 ```kotlin
 Execution failed for task ':app:dataBindingMergeDependencyArtifactsDebug'.
 > Could not resolve all files for configuration ':app:debugCompileClasspath'.
@@ -86,13 +86,22 @@ data class Test(
 
 <br><br>
 
-### ViewModel 선언 시 context 연결 문제
+### 🐛 ViewModel 선언 시 context 참조 문제
 ```kotlin
  Caused by: java.lang.NoSuchMethodException: --.viewmodel.MainViewModel.<init>
 ```
 
 <br>
 #### 🔑 해결 방안
-🚫ViewModel에서 Context를 참조하면 안된다!🚫
+ViewModel에서 Context를 참조하면 안된다!🚫
 수명 주기가 다르기 때문에,,! CustomDialog를 사용하려다가 너무나도 당연히
 context를 참조하려고 했다.. 하면 안돼여!
+
+<br>
+
+### 🐛 API에서 Authorization 분리
+JWT 토큰을 사용하면서 Authorization이 API에 따라 포함 여부가 나뉘는데
+포함인 경우에 누락하여서 발생
+
+#### 🔑 해결 방안
+누락된 API에 헤더를 추가해줬습니당
