@@ -105,3 +105,14 @@ JWT 토큰을 사용하면서 Authorization이 API에 따라 포함 여부가 �
 
 #### 🔑 해결 방안
 누락된 API에 헤더를 추가해줬습니당
+
+<br>
+
+### 🐛 DataBinding Listener 연동 오류
+
+
+View에 선언된 함수를 연동하기 위해, Databinding에 `onClick="@{()->fragment.함수명()}"`을 선언했지만, 제대로 동작하지 않았다<br>
+<br>
+#### 🔑 해결 방안
+정말 어이없는 실수 ㅠㅠ fragment를 바인딩 객체에 연결시키지 않았다..
+제일 기본이 되는 부분인데 ㅠㅠ 누락하지 않게 다시 잘 살펴보기..
